@@ -22,8 +22,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.title = "Detail"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         val detailMovie = getParcelableExtra(intent, EXTRA_DATA, Movie::class.java)
         showDetailMovie(detailMovie)
@@ -36,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
             supportActionBar?.title = detailMovie.title
 
             Glide.with(this)
-                .load(detailMovie.posterPath)
+                .load("https://image.tmdb.org/t/p/w500${detailMovie.posterPath}")
                 .into(binding.ivPoster)
 
             binding.tvTitle.text = it.title
@@ -71,7 +70,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.ivFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite))
+            binding.ivFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_red))
         } else {
             binding.ivFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_not_favorite))
         }

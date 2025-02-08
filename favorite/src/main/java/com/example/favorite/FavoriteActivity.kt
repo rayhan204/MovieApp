@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.capstoneexpert.detail.DetailActivity
 import com.example.core.ui.MovieAdapter
 import com.example.favorite.databinding.ActivityFavoriteBinding
@@ -50,12 +51,10 @@ class FavoriteActivity : AppCompatActivity() {
 
         favoriteViewModel.favoriteMovie.observe(this) { dataMovie ->
             movieAdapter.submitList(dataMovie)
-            binding.viewEmpty.root.visibility =
-                if (dataMovie.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
 
         with(binding.rvMovie) {
-            layoutManager = LinearLayoutManager(this@FavoriteActivity)
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             setHasFixedSize(true)
             adapter = movieAdapter
         }

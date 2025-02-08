@@ -36,7 +36,6 @@ val networkModule = module {
                         "Authorization",
                         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZWUwODIwODRkMjBlMTZhZWE3NWM5MTE0Njc0NWIzOSIsIm5iZiI6MTczODgyMTM1MS44ODUsInN1YiI6IjY3YTQ0ZWU3NDUwMWIyZjIzMzY2ZDQyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a1Bshfl83q7DCTfqq3-4HzKA9QX5lnZWZFoByNGJDPs"
                     )
-                    .addHeader("accept", "application/json")
                     .build()
                 chain.proceed(request)
             }

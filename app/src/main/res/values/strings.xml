@@ -21,6 +21,6 @@
     <string name="rate">Rate: %s</string>
     <string name="favorite_icon">icon favorite</string>
     <string name="votes">Votes: %d</string>
-    <string name="overview">Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai…</string>
+    <string name="overview">Kraven Kravinoff\'s complex relationship with his ruthless gangster father, Nikolai…</string>
     <string name="popularity">Popularity: %s</string>
 </resources>

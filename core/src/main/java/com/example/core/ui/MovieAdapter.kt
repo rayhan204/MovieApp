@@ -27,12 +27,11 @@ class MovieAdapter : ListAdapter<Movie, MovieAdapter.ListViewHolder>(DIFF_CALLBA
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Movie) {
             Glide.with(itemView.context)
-                .load(data.posterPath)
+                .load("https://image.tmdb.org/t/p/w500${data.posterPath}")
                 .into(binding.ivItemImage)
 
             binding.tvItemTitle.text = data.title
             binding.tvReleaseDate.text = data.releaseDate
-            binding.tvItemSubtitle.text = data.overview
         }
 
         init {
