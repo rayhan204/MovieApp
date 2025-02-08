@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
             val movieAdapter = MovieAdapter()
             setupRecyclerView(movieAdapter)
             observeMovie(movieAdapter)
+            setSearchView(movieAdapter)
 
             movieAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
@@ -76,6 +77,33 @@ class HomeFragment : Fragment() {
                 binding.viewError.root.visibility = View.VISIBLE
                 binding.viewError.tvError.text = response.message ?: getString(R.string.something_wrong)
             }
+        }
+    }
+
+    private fun setSearchView(adapter: MovieAdapter) {
+        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (!query.isNullOrEmpty()) {
+                    searchMovie(query, adapter)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText.isNullOrEmpty()) {
+                    observeMovie(adapter)
+                }
+                return true
+            }
+        })
+        binding.searchView.setOnClickListener {
+            binding.searchView.isIconified = false
+        }
+    }
+
+    private fun searchMovie(query: String, adapter: MovieAdapter) {
+        homeViewModel.searchMovie(query).observe(viewLifecycleOwner) { response ->
+            handleResponse(response, adapter)
         }
     }
 

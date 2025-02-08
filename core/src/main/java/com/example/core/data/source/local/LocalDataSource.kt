@@ -16,4 +16,8 @@ class LocalDataSource(private val movieDao: MovieDao) {
         movie.isFavorite = newState
         movieDao.updateFavoriteMovie(movie)
     }
+
+    fun searchMovie(query: String): Flow<List<MovieEntity>> {
+        return movieDao.searchMovie("%$query%")
+    }
 }

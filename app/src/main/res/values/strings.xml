@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CapstoneExpert</string>
+    <string name="app_name">MovieApp</string>
     <string name="title_favorite">Module Title</string>
     <string name="image_description">Image</string>
     <string name="text_primary">Sample of title text</string>
