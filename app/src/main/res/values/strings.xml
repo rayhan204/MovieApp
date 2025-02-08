@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CapstoneExpert</string>
+    <string name="title_favorite">Module Title</string>
+    <string name="image_description">Image</string>
+    <string name="text_primary">Sample of title text</string>
+    <string name="text_subtitle">Sample of subtitle text</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="no_data">Empty data</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="movie_title">Title Movie</string>
+    <string name="genre">Genre</string>
+    <string name="release_date">Release Date: %s</string>
+    <string name="rate">Rate: %s</string>
+    <string name="favorite_icon">icon favorite</string>
+    <string name="votes">Votes: %d</string>
+    <string name="overview">Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai…</string>
+    <string name="popularity">Popularity: %s</string>
+</resources>
