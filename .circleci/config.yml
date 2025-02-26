@@ -28,6 +28,11 @@ jobs:
       # Checkout the code as the first step.
       - checkout
 
+      # Tambahkan permission eksekusi untuk gradlew
+      - run:
+          name: Grant execute permission to gradlew
+          command: chmod +x gradlew
+
       # The next step will run the unit tests
       - android/run-tests:
           test-command: ./gradlew lint testDebug --continue
