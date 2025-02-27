@@ -9,7 +9,7 @@ version: 2.1
 # See: https://circleci.com/docs/orb-intro/
 orbs:
   # See the Android orb documentation here: https://circleci.com/developer/orbs/orb/circleci/android
-  android: circleci/android@2.4.0
+  android: circleci/android@2.5.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
@@ -20,6 +20,7 @@ jobs:
     # See: https://circleci.com/docs/executor-intro/ & https://circleci.com/developer/orbs/orb/circleci/android#executors-android-machine
     executor:
       name: android/android-machine
+      resource-class: large
       tag: default
 
     # Add steps to the job
