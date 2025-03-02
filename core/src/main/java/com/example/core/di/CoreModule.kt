@@ -39,8 +39,8 @@ val networkModule = module {
         val certificatePinner = CertificatePinner.Builder()
             .add(hostname, "sha256/k1Hdw5sdSn5kh/gemLVSQD/P4i4IBQEY1tW4WNxh9XM=")
             .add(hostname, "sha256/ 18tkPyr2nckv4fgo0dhAkaUtJ2hu2831xlO2SKhq8dg=")
-            .add(hostname, "sha/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
-            .add(hostname, "sha/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=")
+            .add(hostname, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+            .add(hostname, "sha256/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=")
             .build()
         OkHttpClient.Builder()
             .addInterceptor { chain ->

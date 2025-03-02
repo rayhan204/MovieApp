@@ -10,6 +10,7 @@ import com.example.core.utils.AppExecutors
 import com.example.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import com.example.core.BuildConfig
 
 class MovieRepository(
     private val remoteDataSource: RemoteDataSource,
@@ -28,7 +29,7 @@ class MovieRepository(
 
 
             override suspend fun createCall(): Flow<ApiResponse<List<ResultsItem>>> =
-                remoteDataSource.getAllMovie("8ee082084d20e16aea75c91146745b39")
+                remoteDataSource.getAllMovie(BuildConfig.KEY)
 
             override suspend fun saveCallResult(data: List<ResultsItem>) {
                 val movieList = DataMapper.mapResponseToEntities(data)
