@@ -29,10 +29,19 @@ jobs:
       # Checkout the code as the first step.
       - checkout
 
+      - run:
+          name: Clean Gradle Cache
+          command: rm -rf ~/.gradle/caches/modules-2/
+
       # Tambahkan permission eksekusi untuk gradlew
       - run:
           name: Grant execute permission to gradlew
           command: chmod +x gradlew
+
+      - run:
+          name: Use Gradle Wrapper
+          command: ./gradlew --version
+
 
       # The next step will run the unit tests
       - android/run-tests:
