@@ -1,8 +1,9 @@
 package com.example.core.data.source.remote.response
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-
+@Keep
 data class ResultsItem(
 
     @field:SerializedName("overview")
